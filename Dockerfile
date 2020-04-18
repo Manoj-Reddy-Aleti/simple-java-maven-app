@@ -1,5 +1,6 @@
 FROM openjdk:12-alpine
 
-COPY target/my-app-*.jar /my-app.jar
+ADD target/my-app-*.jar my-app.jar
+EXPOSE 8085
 
-CMD ["java" , "-jar", "/my-app.jar"]
+ENTRYPOINT ["java" , "-jar", "my-app.jar"]
